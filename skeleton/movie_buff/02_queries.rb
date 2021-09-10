@@ -29,7 +29,8 @@ def vanity_projects
 
   # Note: Directors appear in the 'actors' table.
 
-  
+  Movie.select(:title, :id, "#name").joins(:director).where(actors: {name: {director_id} })
+
 end
 
 def most_supportive
